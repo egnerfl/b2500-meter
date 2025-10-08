@@ -23,16 +23,6 @@ RUN pip3 install --no-cache-dir pipenv && \
     pipenv requirements > requirements.txt && \
     pip3 install --no-cache-dir -r requirements.txt
 
-# Copy application source code (excluding addon-specific files)
-COPY main.py health_service.py ./
-COPY config ./config/
-COPY ct001 ./ct001/
-COPY powermeter ./powermeter/
-COPY shelly ./shelly/
-
-# Save run.sh for later
-COPY run.sh /tmp/run.sh
-
 # Final stage
 FROM ${BUILD_FROM:-ghcr.io/hassio-addons/base:17.0.1}
 
