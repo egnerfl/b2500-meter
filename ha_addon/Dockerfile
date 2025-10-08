@@ -10,10 +10,14 @@ RUN apk add --no-cache \
 
 WORKDIR /app
 
-# Copy the source code from build context (current checkout state)
+# Save run.sh separately before copying everything else
+COPY ha_addon/run.sh /tmp/run.sh
+
+# Copy the source code from repository root
 COPY . ./
-# Save run.sh before removing ha_addon directory and remove ha_addon directory to avoid conflicts
-RUN mv ha_addon/run.sh /tmp/run.sh && rm -rf ha_addon
+
+# Remove ha_addon directory to avoid conflicts
+RUN rm -rf ha_addon
 
 # Create a virtual environment and install dependencies
 RUN python3 -m venv /app/venv
