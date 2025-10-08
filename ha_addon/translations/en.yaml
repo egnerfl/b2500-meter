@@ -20,18 +20,6 @@ configuration:
   log_level:
     name: Log Level
     description: "Controls the verbosity of log messages. Select 'critical' for only critical errors, 'error' for error messages and above, 'warning' for warnings and above, 'info' for informational messages and above (recommended), or 'debug' for detailed debugging information. Use 'debug' for troubleshooting connection or configuration issues."
-  shelly_push_mode:
-    name: Shelly Push Mode
-    description: "Enable push mode to send data proactively to a target IP address instead of waiting for requests from the B2500. This is useful if your B2500 cannot reach the addon directly."
-  shelly_push_target_ip:
-    name: Shelly Push Target IP
-    description: "Target IP address for push mode. Required if push mode is enabled. This should be the IP address of your B2500 or the device that should receive the Shelly emulation data."
-  shelly_push_target_port:
-    name: Shelly Push Target Port
-    description: "Target port for push mode. Required if push mode is enabled. Use port 22222 for standard Shelly communication with the B2500."
-  shelly_push_interval:
-    name: Shelly Push Interval
-    description: "Interval between push messages in seconds. Controls how frequently data is sent to the target device when push mode is enabled. Default is 1.0 second. Supports decimal values (e.g., 0.5 for 500ms)."
   custom_config:
     name: Custom Config
     description: "Optional. Name of a custom config.ini file to use instead of the UI configuration. The file must be placed in the add-on's configuration directory."
