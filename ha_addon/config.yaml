@@ -38,6 +38,10 @@ options:
   device_types: "shellypro3em"
   throttle_interval: 0
   log_level: "info"
+  shelly_push_mode: false
+  shelly_push_target_ip: "192.168.2.8"
+  shelly_push_target_port: 22222
+  shelly_push_interval: 1.0
 schema:
   power_input_alias: str
   power_output_alias: str?
@@ -46,4 +50,8 @@ schema:
   device_types: str
   throttle_interval: float(0,)
   log_level: list(critical|error|warning|info|debug)
+  shelly_push_mode: bool
+  shelly_push_target_ip: str?
+  shelly_push_target_port: int(1,65535)?
+  shelly_push_interval: float(0.1,)?
   custom_config: str?
